@@ -4,9 +4,35 @@
     <meta charset="utf-8">
     <title>VueJS</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="http://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
   </head>
   <body>
+    <div id="vue-app">
+      <h1>{{greet('afternoon')}}</h1>
+      <a v-bind:href="website">Site<a>
+        <br />
+        <br />
+      <input type="text" v-bind:value="name">
+      <p>Age: {{age}}</p>
+      <button v-on:click="add(1)">Add a year</button>
+      <button v-on:click="add(10)">Add 10 years</button>
+      <button v-on:dblclick="subtract(1)">Subtract a year</button>
+      <button v-on:dblclick="subtract(10)">Subtract 10 years</button>
+      <br />
+      <br />
+      <label> Job </label>
+      <input type="text" v-on:keyup="logName" v-model="job"/>
+      {{ job }}
+      <br/>
+      <br/>
+      <label> Period </label>
+      <input type="text" v-on:keyup="logAge" v-model="period" />
+      {{ period }}
+      <br />
+      <br />
+      <div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div>
+    </div>
 
+    <script src="app.js"></script>
   </body>
 </html>
